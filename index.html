@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbie World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap');
+
+        /* Definición de animaciones */
+        @keyframes header-pop-in {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes background-float {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fce4ec; /* Rosa claro de fondo */
+            background-image: radial-gradient(circle at top left, #ffc0cb, transparent), radial-gradient(circle at bottom right, #ffb3c1, transparent);
+            background-size: 200% 200%;
+            animation: background-float 15s ease infinite;
+            color: #d81b60; /* Rosa intenso para el texto principal */
+        }
+        .text-pink-barbie {
+            color: #d81b60;
+        }
+        .bg-pink-barbie {
+            background-color: #d81b60;
+        }
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+        .content-fade-in {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .content-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .header-animate {
+            animation: header-pop-in 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="p-8">
+
+    <!-- Header -->
+    <header class="text-center mb-12">
+        <h1 class="text-6xl font-pacifico text-pink-barbie drop-shadow-lg header-animate">
+            Barbie World
+        </h1>
+        <p class="text-xl mt-4 font-semibold header-animate" style="animation-delay: 0.3s;">¡Donde todo es posible!</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto bg-white p-8 rounded-3xl shadow-2xl">
+        <div class="text-center mb-10">
+            <img src="https://thumbs.dreamstime.com/b/logotipo-de-barbie-rosa-ilustraci%C3%B3n-editorial-aislada-en-fondo-blanco-285379681.jpg" alt="Logo de Barbie en rosa" class="mx-auto w-80 drop-shadow-lg mb-4" />
+        </div>
+        
+        <!-- About Section -->
+        <section class="mb-10 text-center">
+            <h2 class="text-4xl font-bold mb-4 text-pink-barbie border-b-2 border-pink-300 pb-2 inline-block">
+                La historia de una muñeca icónica
+            </h2>
+            <p class="text-gray-700 leading-relaxed mt-4">
+                Barbie ha inspirado a millones de personas en todo el mundo a través de su capacidad para ser cualquier cosa: una astronauta, una doctora, una princesa o una atleta. Desde su debut en 1959, ha evolucionado para reflejar las tendencias y la diversidad de cada generación, demostrando que no hay límites para lo que puedes lograr.
+            </p>
+        </section>
+
+        <!-- Buttons Section -->
+        <section class="mb-10 text-center">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <button id="btn-logo" data-target="logo" class="button-selector bg-pink-barbie text-white py-3 px-2 rounded-full shadow-lg hover:bg-pink-400 transition-colors transform hover:scale-105 active:scale-95 font-bold">1. Logo</button>
+                <button id="btn-mision" data-target="mision" class="button-selector bg-pink-barbie text-white py-3 px-2 rounded-full shadow-lg hover:bg-pink-400 transition-colors transform hover:scale-105 active:scale-95 font-bold">2. Misión</button>
+                <button id="btn-valores" data-target="valores" class="button-selector bg-pink-barbie text-white py-3 px-2 rounded-full shadow-lg hover:bg-pink-400 transition-colors transform hover:scale-105 active:scale-95 font-bold">3. Valores</button>
+                <button id="btn-tipografia" data-target="tipografia" class="button-selector bg-pink-barbie text-white py-3 px-2 rounded-full shadow-lg hover:bg-pink-400 transition-colors transform hover:scale-105 active:scale-95 font-bold">4. Tipografía</button>
+                <button id="btn-colores" data-target="colores" class="button-selector bg-pink-barbie text-white py-3 px-2 rounded-full shadow-lg hover:bg-pink-400 transition-colors transform hover:scale-105 active:scale-95 font-bold">5. Colores</button>
+                <button id="btn-marketing" data-target="marketing" class="button-selector bg-pink-barbie text-white py-3 px-2 rounded-full shadow-lg hover:bg-pink-400 transition-colors transform hover:scale-105 active:scale-95 font-bold">6. Marketing</button>
+                <button id="btn-empaques" data-target="empaques" class="button-selector bg-pink-barbie text-white py-3 px-2 rounded-full shadow-lg hover:bg-pink-400 transition-colors transform hover:scale-105 active:scale-95 font-bold">7. Empaques</button>
+                <button id="btn-sonido" data-target="sonido" class="button-selector bg-pink-barbie text-white py-3 px-2 rounded-full shadow-lg hover:bg-pink-400 transition-colors transform hover:scale-105 active:scale-95 font-bold">8. Sonido y Música</button>
+                <button id="btn-experiencias" data-target="experiencias" class="button-selector bg-pink-barbie text-white py-3 px-2 rounded-full shadow-lg hover:bg-pink-400 transition-colors transform hover:scale-105 active:scale-95 font-bold">9. Experiencias</button>
+                <button id="btn-tono" data-target="tono" class="button-selector bg-pink-barbie text-white py-3 px-2 rounded-full shadow-lg hover:bg-pink-400 transition-colors transform hover:scale-105 active:scale-95 font-bold">10. Tono de Voz</button>
+            </div>
+        </section>
+
+        <!-- Content Display Area -->
+        <section id="content-display" class="mt-12 text-gray-700 leading-relaxed text-left content-fade-in"></section>
+
+    </main>
+
+    <!-- Go to Top Button -->
+    <button id="go-to-top" class="fixed bottom-8 right-8 bg-pink-barbie text-white p-4 rounded-full shadow-lg hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="text-center mt-12 text-pink-barbie text-sm">
+        <p>&copy; 2024 Barbie World. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Data for each content section
+        const contentData = {
+            logo: {
+                title: '1. Logo',
+                html: `
+                    <p class="mb-4">El logotipo de Barbie es su sello más reconocible.</p>
+                    <ul class="list-disc list-inside mt-2 space-y-2">
+                        <li><strong>Estilo:</strong> Manuscrito, con curvas suaves y dinámicas que transmiten cercanía y feminidad.</li>
+                        <li><strong>Color:</strong> Generalmente en rosa Barbie, pero puede adaptarse a blanco o negro según el soporte.</li>
+                        <li><strong>Significado:</strong> Representa diversión, creatividad y estilo, reforzando el espíritu aspiracional de la marca.</li>
+                    </ul>
+                    <div class="flex justify-center mt-6">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbotZ39a2iZJ0JNY-s3s2WpQRUo-eN5Cq-oQ&s" alt="Logo de Barbie en diferentes estilos" class="w-full max-w-sm rounded-lg shadow-md" />
+                    </div>
+                `
+            },
+            mision: {
+                title: '2. Misión',
+                html: `
+                    <p class="mb-4">La misión de Barbie ha evolucionado:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-2">
+                        <li><strong>Antes:</strong> Reflejar un ideal de belleza y moda.</li>
+                        <li><strong>Hoy:</strong> “Mostrar que las niñas pueden ser lo que quieran ser, inspirándolas a través del juego, la creatividad y la diversidad.”</li>
+                    </ul>
+                    <p class="mt-4"><strong>👉 Esto posiciona a Barbie como una marca que empodera, en lugar de limitar.</strong></p>
+                    <div class="flex justify-center mt-6">
+                        <img src="https://images.contentstack.io/v3/assets/blt485dfa12bf05dba5/blt3ac5a8db2523a345/671975faaa96cf4dccf63096/BARBIE_AboutPage_Module1_2386w_Desktop_2024.jpg" alt="Imagen de la página de misión de Barbie" class="w-full max-w-md rounded-lg shadow-md" />
+                    </div>
+                `
+            },
+            valores: {
+                title: '3. Valores',
+                html: `
+                    <p class="mb-4">Los pilares que guían todas sus acciones:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-2">
+                        <li><strong>Empoderamiento:</strong> Enseñar que no hay límites para lo que una niña pueda lograr.</li>
+                        <li><strong>Inclusión y diversidad:</strong> Representar distintos cuerpos, etnias, profesiones y realidades.</li>
+                        <li><strong>Creatividad e imaginación:</strong> Incentivar a crear mundos propios a través del juego.</li>
+                        <li><strong>Optimismo:</strong> Mensajes siempre positivos, alegres y motivadores.</li>
+                        <li><strong>Glamour y estilo:</strong> Un vínculo constante con la moda, la belleza y las tendencias.</li>
+                    </ul>
+                    <div class="flex justify-center mt-6">
+                        <img src="https://ipmark.com/wp-content/uploads/Barbie-2021-Fashionistas-okk-800x445.jpg" alt="Imagen de la línea Fashionistas de Barbie 2021" class="w-full max-w-sm rounded-lg shadow-md" />
+                    </div>
+                `
+            },
+            tipografia: {
+                title: '4. Tipografía',
+                html: `
+                    <p class="mb-4">La tipografía es clave en la identidad visual de la marca.</p>
+                    <ul class="list-disc list-inside mt-2 space-y-2">
+                        <li><strong>Principal (logotipo):</strong> Cursiva, manuscrita, fluida y femenina. Es exclusiva y reconocible.</li>
+                        <li><strong>Secundaria (comunicaciones):</strong> Sans serif moderna y minimalista (ej. Helvetica, Futura o similares) que aporta equilibrio y legibilidad en textos digitales e impresos.</li>
+                    </ul>
+                    <p class="mt-4"><strong>👉 La mezcla de lo manuscrito (emotivo) y lo sans serif (racional) refleja el balance entre juego creativo y mensaje claro.</strong></p>
+                    <div class="flex justify-center mt-6">
+                        <img src="https://www.planetasilhouette.es/wp-content/uploads/2023/07/Barbielogos.jpg" alt="Logos de Barbie a través del tiempo" class="w-full max-w-sm rounded-lg shadow-md" />
+                    </div>
+                `
+            },
+            colores: {
+                title: '5. Colores',
+                html: `
+                    <p class="mb-4">La paleta cromática busca transmitir alegría, diversidad y aspiración.</p>
+                    <ul class="list-disc list-inside mt-2 space-y-2">
+                        <li><strong>Rosa Barbie (Pantone 219C):</strong> Identidad central, símbolo de feminidad y energía positiva.</li>
+                        <li><strong>Blanco:</strong> Refuerza la pureza y la simplicidad.</li>
+                        <li><strong>Negro:</strong> Elegancia y contraste, usado en colecciones premium.</li>
+                        <li><strong>Otros tonos brillantes (turquesa, amarillo, violeta):</strong> Reflejan juventud, diversidad y dinamismo.</li>
+                    </ul>
+                    <div class="flex justify-center mt-6">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu6AICh2XzGcf2ahIXnwY1-3vfOqe4XgG17Q&s" alt="Paleta de colores de Barbie" class="w-full max-w-sm rounded-lg shadow-md" />
+                    </div>
+                `
+            },
+            marketing: {
+                title: '6. Marketing',
+                html: `
+                    <p class="mb-4">La estrategia de Barbie combina tradición y reinvención:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-2">
+                        <li><strong>Storytelling emocional:</strong> Uso de la nostalgia para conectar con adultos que crecieron con la muñeca.</li>
+                        <li><strong>Empoderamiento femenino:</strong> Campañas globales como “You can be anything”.</li>
+                        <li><strong>Colaboraciones estratégicas:</strong> Con moda (Moschino, Balmain), arte, música y cine (Barbie The Movie 2023).</li>
+                        <li><strong>Redes sociales y contenido digital:</strong> Comunicación cercana con audiencias jóvenes y adultas.</li>
+                    </ul>
+                    <div class="flex justify-center mt-6">
+                        <img src="https://cdn.mediawpaccore.net/wp-content/uploads/2023/04/07103314/PCFRVLR4PJAJTO46KOI3FPJN5A.jpg" alt="Barbie en una colaboración de moda con Balmain" class="w-full max-w-sm rounded-lg shadow-md" />
+                    </div>
+                `
+            },
+            empaques: {
+                title: '7. Empaques',
+                html: `
+                    <p class="mb-4">Los empaques son parte esencial de la experiencia Barbie.</p>
+                    <ul class="list-disc list-inside mt-2 space-y-2">
+                        <li><strong>Diseño predominante:</strong> Rosa como color dominante, tipografía icónica y ventanas transparentes para ver la muñeca.</li>
+                        <li><strong>Variaciones:</strong> Ediciones especiales con empaques premium, minimalistas o de colección.</li>
+                        <li><strong>Función emocional:</strong> El empaque no solo protege, sino que anticipa la experiencia de juego y refuerza el carácter aspiracional.</li>
+                    </ul>
+                    <div class="flex justify-center mt-6">
+                        <img src="https://images.mattel.net/images/w_360,c_scale,f_auto/shop-emea-prod/files/jobb1sqscrhamzyrsydv/barbie-signature-perfect-day-barbie-the-movie-hpj96-es-es.jpg" alt="Barbie en su empaque de película 'Perfect Day'" class="w-full max-w-sm rounded-lg shadow-md" />
+                    </div>
+                `
+            },
+            sonido: {
+                title: '8. Sonido y Música',
+                html: `
+                    <p class="mb-4">La música de Barbie es clave para transmitir su energía y estilo. Su identidad sonora se basa en:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-2">
+                        <li><strong>Estilo sonoro:</strong> Alegre, juvenil, con toques pop y optimistas.</li>
+                        <li><strong>Publicidad y cine:</strong> Uso de música contagiosa, moderna y aspiracional.</li>
+                        <li><strong>Identidad auditiva:</strong> No tiene un jingle único fijo, pero la asociación con música pop y brillante es constante.</li>
+                    </ul>
+                    <p class="mt-4">Aquí puedes disfrutar de algunos videos con la música del universo Barbie:</p>
+                    <div class="flex flex-col items-center mt-6 space-y-4">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZyhrYis509A?si=HXL4k6tMdFgCaaDI&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/AqG0GF_LA0Q?si=7D1J45IgTspmM6k0&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/OiC1rgCPmUQ?si=fxbzv5R9SApDS4Hh&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                `
+            },
+            experiencias: {
+                title: '9. Experiencias',
+                html: `
+                    <p class="mb-4">Barbie no es solo un producto, sino un universo inmersivo.</p>
+                    <ul class="list-disc list-inside mt-2 space-y-2">
+                        <li><strong>Cine y TV:</strong> Películas animadas y live-action que expanden la narrativa de la marca.</li>
+                        <li><strong>Eventos temáticos:</strong> Ej. Barbie Dreamhouse Experience, espacios inmersivos donde los fans interactúan con el mundo Barbie.</li>
+                        <li><strong>Colaboraciones de lifestyle:</strong> Ropa, accesorios, decoración, que convierten la marca en un estilo de vida.</li>
+                        <li><strong>Coleccionismo adulto:</strong> Ediciones limitadas que generan prestigio y exclusividad.</li>
+                    </ul>
+                    <div class="flex justify-center mt-6">
+                        <img src="https://barbiedreamlounge.com/images/instalaciones/render03.jpg?v=20250910071459" alt="Render de un espacio temático de Barbie" class="w-full max-w-md rounded-lg shadow-md" />
+                    </div>
+                `
+            },
+            tono: {
+                title: '10. Tono de Voz',
+                html: `
+                    <p class="mb-4">La manera en que Barbie se comunica refuerza su personalidad:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-2">
+                        <li><strong>Optimista y alegre:</strong> Siempre positivo y luminoso.</li>
+                        <li><strong>Aspiracional pero cercano:</strong> Motiva, pero sin ser inalcanzable.</li>
+                        <li><strong>Inspirador:</strong> Mensajes que impulsan a soñar y a creer en uno mismo.</li>
+                        <li><strong>Juvenil y divertido:</strong> Lenguaje fresco, dinámico y culturalmente actualizado.</li>
+                    </ul>
+                    <div class="flex justify-center mt-6">
+                        <img src="https://m.media-amazon.com/images/I/81Z74bBafXL._UF1000,1000_QL80_.jpg" alt="Barbie en la película" class="w-full max-w-sm rounded-lg shadow-md" />
+                    </div>
+                `
+            }
+        };
+
+        const contentDisplay = document.getElementById('content-display');
+        const buttons = document.querySelectorAll('.button-selector');
+        const goToTopBtn = document.getElementById('go-to-top');
+
+        const setActiveButton = (target) => {
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-pink-400');
+                if (btn.getAttribute('data-target') === target) {
+                    btn.classList.add('bg-pink-400');
+                }
+            });
+        };
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const target = button.getAttribute('data-target');
+                const content = contentData[target];
+
+                if (content) {
+                    setActiveButton(target);
+                    // Start fade out effect
+                    contentDisplay.classList.remove('content-visible');
+                    
+                    // After a short delay, update content and fade in
+                    setTimeout(() => {
+                        contentDisplay.innerHTML = `
+                            <h2 class="text-3xl font-bold mb-4 text-pink-barbie border-b-2 border-pink-300 pb-2 inline-block">${content.title}</h2>
+                            <div class="mt-4">${content.html}</div>
+                        `;
+                        contentDisplay.classList.add('content-visible');
+                        // Scroll to content section smoothly
+                        contentDisplay.scrollIntoView({ behavior: 'smooth' });
+                    }, 500); // Match this delay with the CSS transition duration
+                }
+            });
+        });
+
+        // Show/hide Go to Top button
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                goToTopBtn.classList.remove('hidden');
+            } else {
+                goToTopBtn.classList.add('hidden');
+            }
+        });
+
+        goToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Initialize with default content
+        document.addEventListener('DOMContentLoaded', () => {
+            const defaultTarget = 'mision';
+            const defaultContent = contentData[defaultTarget];
+            contentDisplay.innerHTML = `
+                <h2 class="text-3xl font-bold mb-4 text-pink-barbie border-b-2 border-pink-300 pb-2 inline-block">${defaultContent.title}</h2>
+                <div class="mt-4">${defaultContent.html}</div>
+            `;
+            // Add fade-in effect on initial load
+            contentDisplay.classList.add('content-visible');
+            setActiveButton(defaultTarget);
+        });
+    </script>
+</body>
+</html>
